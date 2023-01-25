@@ -13,11 +13,12 @@ import Canvas from "react-native-canvas";
 import styled from "styled-components/native";
 const { height: currentHeight, width: currentWidth } = Dimensions.get("window");
 const CameraBox = styled(Camera)`
-  width: ${currentWidth}px;
-  height: ${currentHeight * 0.7}px;
+  width: 100px;
+  height: 100px;
   justify-content: center;
   align-items: center;
   position: relative;
+  bottom: 0;
 `;
 
 const CameraPreview = () => {
@@ -137,9 +138,8 @@ const CameraPreview = () => {
         }}
         ref={handleCanvas}
       />
-      <CameraBox ref={camera}>
-        <Pressable style={{ width: 100, height: 100, backgroundColor: "rgba(0,0,0,0.3)" }} onPress={onPress} />
-      </CameraBox>
+      <CameraBox ref={camera}></CameraBox>
+      <Pressable style={{ width: 200, height: 200, backgroundColor: "rgba(0,0,0,0.3)" }} onPress={onPress} />
     </View>
   );
 };
